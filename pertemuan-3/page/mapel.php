@@ -12,7 +12,7 @@
 if(isset($_GET['action'])) {
     if($_GET['action'] == "hapus") {
         $kd =$_GET['kd'];
-        $query = mysqli_query($koneksi, "DELETE FROM mapel where kd_mapel = '$kd'");
+        $query = mysqli_query($koneksi, "DELETE FROM mapel where Kd_mapel = '$kd'");
         if ($query){
             echo '
             <div class="alert alert-warning alert-dismissible">
@@ -34,7 +34,7 @@ if(isset($_GET['action'])) {
                         <th>NO</th>
                         <th>Kd mapel</th>
                         <th>Nama mapel</th>
-                        <th>KKM</th>
+                        <th>Kkm</th>
                         <th>Aksi</th>
                     </tr>
                 </tread>
@@ -47,14 +47,14 @@ if(isset($_GET['action'])) {
                     <tbody>
                         <tr>
                             <td><?= $no;?></td>
-                            <td><?=$result['kd_mapel']; ?></td>
-                            <td><?=$result['nm_mapel']; ?></td>
-                             <td><?=$result['kkm']; ?></td>
+                            <td><?=$result['Kd_mapel']; ?></td>
+                            <td><?=$result['Nm_mapel']; ?></td>
+                             <td><?=$result['Kkm']; ?></td>
                              <td>
-                                <a href="index.php?page=mapel&action=hapus&kd=<?=  $result['kd_mapel']
+                                <a href="index.php?page=mapel&action=hapus&kd=<?=  $result['Kd_mapel']
                                 ?>" title="">
                                 <span class="badge badge-danger">Hapus</span></a>
-                                <a href="index.php?page=edit_mapel&kd=<?= $result['kd_mapel'] ?>" title
+                                <a href="index.php?page=edit_mapel&kd=<?= $result['Kd_mapel'] ?>" title
                                 =""><span class
                                 ="badge badge-warning">Edit</span><a>
                              </td>
