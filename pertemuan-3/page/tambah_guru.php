@@ -28,7 +28,13 @@ if(isset($_POST['tambah'])) {
     $Hp = $_POST['Hp'];
     $Alamat = $_POST['Alamat'];
 
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $role = "guru";
+
     $insert = mysqli_query($koneksi,"INSERT INTO guru values ('$Kd_guru','$Nm_guru','$Jenkel','$Pend_terakhir','$Hp','$Alamat')");
+
+    $insert = mysqli_query($koneksi,"INSERT INTO users (username, password, role) values ('$username','$password','$role')");
     if ($insert) {
         echo '<div class="alert alert-success alert-dismissible">
         <button type="button" class="close" data-dismiss="alert"
@@ -79,6 +85,16 @@ if(isset($_POST['tambah'])) {
                         <div class="form-group">
                             <label for="Alamat">Alamat</label>
                             <input type="text" name="Alamat" id="Alamat" placeholder="Alamat" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" name="username" id="username" placeholder="Username" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" id="password" placeholder="Password" class="form-control">
                         </div>
 
                         <div class="card-footer">
