@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 26, 2026 at 03:33 PM
+-- Generation Time: Apr 25, 2026 at 04:17 PM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -24,44 +24,51 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Table structure for table `users`
 --
 
-CREATE TABLE `admin` (
-  `Id_admin` int(11) NOT NULL,
-  `Nama_lengkap` varchar(50) NOT NULL,
-  `Username` varchar(255) NOT NULL,
-  `Password` int(11) NOT NULL
+CREATE TABLE `users` (
+  `id_user` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `role` enum('admin','guru','siswa') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `admin`
+-- Dumping data for table `users`
 --
 
-INSERT INTO `admin` (`Id_admin`, `Nama_lengkap`, `Username`, `Password`) VALUES
-(2, 'Delpiah Wahyuningsih', 'admin', 12345),
-(3, 'Steven Marcelino', 'siswa', 12345),
-(4, 'Yanto Kebab', 'guru', 12345);
+INSERT INTO `users` (`id_user`, `username`, `password`, `role`) VALUES
+(1, 'Dephiah Wahyuningsih', '1234', 'admin'),
+(2, 'azka', '12345', 'guru'),
+(3, 'Marcel', '12345', 'siswa'),
+(4, 'Budi', '12345', 'guru'),
+(5, 'eko', '12345', 'guru'),
+(6, 'loren', '12345', 'guru'),
+(7, '25177343843', '12345', 'guru'),
+(8, 'Marcel', '12345', 'guru'),
+(9, '2511500061', '12345', 'admin'),
+(11, 'eko', '1234', 'guru');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin`
+-- Indexes for table `users`
 --
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`Id_admin`);
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id_user`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT for table `users`
 --
-ALTER TABLE `admin`
-  MODIFY `Id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+ALTER TABLE `users`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

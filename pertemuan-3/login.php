@@ -32,8 +32,8 @@
 
       <form action="#" method="post">
     <div class="input-group mb-3">
-        <input type="text" name="Username" id="Username" class="
-        form-control" placeholder="Username">
+        <input type="text" name="username" id="username" class="
+        form-control" placeholder="username">
         <div class="input-group-append">
             <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
@@ -41,8 +41,8 @@
         </div>
     </div>
     <div class="input-group mb-3">
-        <input type="password" name="Password" id="Password" class="
-        form-control" placeholder="Password">
+        <input type="password" name="password" id="password" class="
+        form-control" placeholder="password">
         <div class="input-group-append">
             <div class="input-group-text">
                 <span class="fas fa-lock"></span>
@@ -75,18 +75,18 @@
 </html>
 
 <?php
-    if(isset($_POST['Username'])) {
-        $Username = $_POST['Username'];
-        $Password = $_POST['Password'];
+    if(isset($_POST['username'])) {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
 
-        if(empty($Username) || empty($Password)) {
+        if(empty($username) || empty($password)) {
             echo "Data Tidak Boleh kosong";
         } else {
             $userquery = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM
-            admin WHERE Username = '$Username' AND Password = '$Password' "));
+            users WHERE username = '$username' AND password = '$password' "));
             if($userquery) {
-                $_SESSION['level'] = 'admin';
-                $_SESSION['Username'] = $Username;
+                $_SESSION['role'] = $userquery['role'];
+                $_SESSION['username'] = $username;
                 header("location:index.php");
             } else {
                 echo '<div class="alert alert-danger alert-dismissible">

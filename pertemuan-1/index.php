@@ -1,7 +1,8 @@
 <?php
   session_start();
   require_once("config/koneksi.php");
-  if(isset($_SESSION['Username'])){
+  if(isset($_SESSION['role'])){
+    $role = $_SESSION['role'];
 ?>
 <!DOCTYPE html>
 <!--
@@ -84,7 +85,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Steven Marcelino</a>
+          <a href="#" class="d-block"><?php echo $_SESSION['username']; ?></a>
         </div>
       </div>
 
@@ -105,7 +106,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item">
+          <?php if ($role == 'admin') : ?>
+          <li class="nav-item menu-open">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -114,6 +116,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
             <ul class="nav nav-treeview">
+              </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -126,9 +129,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <p>Guru</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Siswa</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Kelas</p>
+                </a>
+              </li>
             </ul>
-          </li>
-          <li class="nav-item">
+            <?php endif; ?>
+
+          <?php if ($role == 'guru') : ?>
+          <li class="nav-item menu-open">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-chalkboard-teacher"></i>
               <p>
@@ -156,8 +173,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
             </ul>
-          </li>
-          <li class="nav-item">
+             <?php endif; ?>
+
+          <?php if ($role == 'siswa') : ?>
+          <li class="nav-item menu-open">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-user-graduate"></i>
               <p>
@@ -179,8 +198,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
             </ul>
-          </li>
-          <li class="nav-item">
+          <?php endif; ?>
+
+          <li class="nav-item menu-open">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
@@ -236,10 +256,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Dashboard</h5>
 
                 <p class="card-text">
-                  Selamat Datang di Sistem Jadwal Guru pada SMA/SMK XYZ
+                  <?php
+                  if (isset($_GET['page'])) {
+                    $page = $_GET['page'];
+                  } else {
+                    $page = "";
+                  }
+                  if ($page == "") {
+                    include "page/dashboard.php";
+                  } elseif (!file_exists("page/$page.php")) {
+                    echo "File Tidak Ditemukan";
+                  } else {
+                    include"page/$page.php";
+                  }
+                  ?>
                 </p>
 
                 <a href="#" class="card-link">Card link</a>

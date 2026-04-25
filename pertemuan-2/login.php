@@ -83,7 +83,7 @@
             $query = mysqli_query($koneksi, "SELECT * FROM users WHERE username = '$username' AND password = '$password' ");
             $data = mysqli_fetch_array($query);
             if($data) {
-                $_SESSION['Username'] = $data['username'];
+                $_SESSION['username'] = $data['username'];
                 $_SESSION['level'] = $data['role'];
 
                 $role = $data['role'];
