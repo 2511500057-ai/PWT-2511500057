@@ -27,12 +27,15 @@ if (isset($_POST['tambah'])) {
 
             if ($update) {
                 echo "<div class='alert alert-success'>Password berhasil diganti!</div>";
+                echo '<meta http-equiv="refresh" content="1;url=index.php?page=ganti_password">';
             } else {
                 echo "<div class='alert alert-danger'>Gagal update password!</div>";
+                echo '<meta http-equiv="refresh" content="1;url=index.php?page=ganti_password">';
             }
 
         } else {
             echo "<div class='alert alert-danger'>Password lama salah!</div>";
+            echo '<meta http-equiv="refresh" content="1;url=index.php?page=ganti_password">';
         }
     }
 }
