@@ -232,18 +232,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
             <ul class="nav nav-treeview">
+              <?php if ($role == 'admin' || $role == 'guru') : ?>
               <li class="nav-item">
                 <a href="index.php?page=jadwal" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Jadwal</p>
                 </a>
               </li>
+              <?php endif; ?>
+              <?php if ($role == 'admin' || $role == 'siswa') : ?>
               <li class="nav-item">
                 <a href="index.php?page=jadwal_kelas" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Jadwal Kelas</p>
                 </a>
               </li>
+              <?php endif; ?>
               <li class="nav-item">
                 <a href="logout.php" class="nav-link">
                   <i class="nav-icon fas fa-th"></i>
