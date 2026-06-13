@@ -192,37 +192,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </ul>
              <?php endif; ?>
 
-          <?php if ($role == 'siswa') : ?>
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-user-graduate"></i>
-              <p>
-                Siswa
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="index.php?page=ganti_password" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Ganti Password</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Profil</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Jadwal</p>
-                </a>
-              </li>
-            </ul>
-          <?php endif; ?>
-
           <li class="nav-item menu-open">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
