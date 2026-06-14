@@ -83,7 +83,7 @@
             echo "Data Tidak Boleh kosong";
         } else {
             $userquery = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM
-            users WHERE username = '$username' AND password = '$password' "));
+            user WHERE username = '$username' AND password = '$password' "));
             if($userquery) {
                 $_SESSION['role'] = $userquery['role'];
                 $_SESSION['username'] = $username;
