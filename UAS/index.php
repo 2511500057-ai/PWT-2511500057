@@ -117,39 +117,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="index.php?page=ganti_password" class="nav-link">
+                <a href="index.php?page=dashboard" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Ganti Password</p>
+                  <p>Dashboard</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="index.php?page=ekstra2511500057" class="nav-link">
+                <a href="index.php?page=laporan" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Ekstrakurikuler</p>
+                  <p>Laporan Absen</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="index.php?page=mapel" class="nav-link">
+                <a href="index.php?page=pegawai" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Mata Pelajaran</p>
+                  <p>Data pegawai</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="index.php?page=guru" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Guru</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=siswa" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Siswa</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=kelas" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Kelas</p>
+                <a href="logout.php" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>Logout</p>
                 </a>
               </li>
             </ul>
@@ -166,37 +154,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
+                <a href="index.php?page=dashboard_pegawai" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="index.php?page=absen" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Absen</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="index.php?page=riwayat" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Riwayat Absen</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="index.php?page=ganti_password" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Ganti Password</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Absen</p>
-                </a>
-              </li>
-            </ul>
-             <?php endif; ?>
-
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Transaksi
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <?php if ($role == 'admin' || $role == 'guru') : ?>
-              <li class="nav-item">
-                <a href="index.php?page=jadwal" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Jadwal</p>
-                </a>
-              </li>
-              <?php endif; ?>
               <li class="nav-item">
                 <a href="logout.php" class="nav-link">
                   <i class="nav-icon fas fa-th"></i>
@@ -204,7 +184,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
             </ul>
-          </li>
+             <?php endif; ?>
       </nav>
       <!-- /.sidebar-menu -->
     </div>
