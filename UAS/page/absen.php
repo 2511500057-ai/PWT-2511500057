@@ -7,6 +7,7 @@ $data_user  = mysqli_fetch_assoc($query_user);
 $id_user    = $data_user['id_user'];
 
 $today        = date('Y-m-d');
+$hari_ini = date('l');
 $jam_sekarang = date('H:i:s');
 
 // Map hari
@@ -19,7 +20,7 @@ $map_hari = [
     'Saturday'  => 'Sabtu', 
     'Sunday'    => 'Minggu'
 ];
-$hari_indo = $map_hari[date('l')] ?? date('l');
+$hari_indo = $map_hari[$hari_ini] ?? $hari_ini;
 
 // Ambil jam kerja hari ini
 $jam_kerja = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT * FROM jam_kerja WHERE hari='$hari_indo'"));
