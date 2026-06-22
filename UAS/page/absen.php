@@ -7,7 +7,7 @@ $data_user  = mysqli_fetch_assoc($query_user);
 $id_user    = $data_user['id_user'];
 
 $today        = date('Y-m-d');
-$hari_ini = date('l');
+$hari_ini     = date('l');
 $jam_sekarang = date('H:i:s');
 
 // Map hari
