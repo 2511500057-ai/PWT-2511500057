@@ -1,4 +1,6 @@
 <?php
+date_default_timezone_set('Asia/Jakarta');
+
 // Hitung total pegawai
 $total_pegawai = mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM user WHERE role='pegawai'"));
 

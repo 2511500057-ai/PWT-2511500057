@@ -1,4 +1,6 @@
 <?php
+date_default_timezone_set('Asia/Jakarta');
+
 $id_user_sesi = null;
 $query_user   = mysqli_query($koneksi, "SELECT id_user, nama_lengkap FROM user WHERE username='{$_SESSION['username']}'");
 $data_user    = mysqli_fetch_assoc($query_user);
