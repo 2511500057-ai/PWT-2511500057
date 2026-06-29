@@ -16,7 +16,7 @@ $query = mysqli_query($koneksi, "SELECT ad.tanggal, ad.jam_datang, ad.status_dat
 
 $total        = mysqli_num_rows($query);
 $telat        = mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM absen_datang WHERE id_user='$id_user' AND tanggal LIKE '$filter_bulan%' AND status_datang='Telat'"));
-$ontime       = $total - $telat;
+$ontime       = mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM absen_datang WHERE id_user='$id_user' AND tanggal LIKE '$filter_bulan%' AND status_datang='Ontime'"));
 $pulang_cepat = mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM absen_pulang WHERE id_user='$id_user' AND tanggal LIKE '$filter_bulan%' AND status_pulang='Pulang Cepat'"));
 ?>
 
