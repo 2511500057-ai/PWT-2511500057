@@ -88,7 +88,7 @@ $jam_kerja = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT * FROM jam_kerja 
             <a href="index.php?page=riwayat" class="small-box-footer">Lihat Riwayat <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
-            </div>
+</div>
 
 <div class="row">
     <div class="col-12">
