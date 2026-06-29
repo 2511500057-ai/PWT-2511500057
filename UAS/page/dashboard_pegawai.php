@@ -29,9 +29,6 @@ $absen_pulang = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT * FROM absen_p
 // Statistik bulan ini
 $bulan              = date('Y-m');
 $total_hadir        = mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM absen_datang WHERE id_user='$id_user_sesi' AND tanggal LIKE '$bulan%'"));
-$total_telat        = mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM absen_datang WHERE id_user='$id_user_sesi' AND tanggal LIKE '$bulan%' AND status_datang='Telat'"));
-$total_pulang_cepat = mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM absen_pulang WHERE id_user='$id_user_sesi' AND tanggal LIKE '$bulan%' AND status_pulang='Pulang Cepat'"));
-
 // Jam kerja hari ini
 $jam_kerja = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT * FROM jam_kerja WHERE hari='$hari_indo'"));
 ?>
@@ -52,7 +49,7 @@ $jam_kerja = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT * FROM jam_kerja 
 </div>
 
 <div class="row">
-    <div class="col-lg-3 col-6">
+    <div class="col-lg-4 col-6">
         <div class="small-box bg-<?= $absen_datang ? 'success' : 'secondary' ?>">
             <div class="inner">
                 <h3><?= $absen_datang ? $absen_datang['jam_datang'] : '-' ?></h3>
@@ -66,7 +63,7 @@ $jam_kerja = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT * FROM jam_kerja 
         </div>
     </div>
     
-    <div class="col-lg-3 col-6">
+    <div class="col-lg-4 col-6">
         <div class="small-box bg-<?= $absen_pulang ? 'danger' : 'secondary' ?>">
             <div class="inner">
                 <h3><?= $absen_pulang ? $absen_pulang['jam_pulang'] : '-' ?></h3>
@@ -80,7 +77,7 @@ $jam_kerja = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT * FROM jam_kerja 
         </div>
     </div>
     
-    <div class="col-lg-3 col-6">
+    <div class="col-lg-4 col-6">
         <div class="small-box bg-info">
             <div class="inner">
                 <h3><?= $total_hadir ?></h3>
@@ -90,18 +87,7 @@ $jam_kerja = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT * FROM jam_kerja 
             <a href="index.php?page=riwayat" class="small-box-footer">Lihat Riwayat <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
-    
-    <div class="col-lg-3 col-6">
-        <div class="small-box bg-warning">
-            <div class="inner">
-                <h3><?= $total_telat ?></h3>
-                <p>Telat Bulan Ini</p>
             </div>
-            <div class="icon"><i class="fas fa-clock"></i></div>
-            <a href="index.php?page=riwayat" class="small-box-footer">Lihat Riwayat <i class="fas fa-arrow-circle-right"></i></a>
-        </div>
-    </div>
-</div>
 
 <div class="row">
     <div class="col-12">
