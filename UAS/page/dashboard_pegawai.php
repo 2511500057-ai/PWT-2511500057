@@ -29,6 +29,7 @@ $absen_pulang = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT * FROM absen_p
 // Statistik bulan ini
 $bulan              = date('Y-m');
 $total_hadir        = mysqli_num_rows(mysqli_query($koneksi, "SELECT * FROM absen_datang WHERE id_user='$id_user_sesi' AND tanggal LIKE '$bulan%'"));
+
 // Jam kerja hari ini
 $jam_kerja = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT * FROM jam_kerja WHERE hari='$hari_indo'"));
 ?>
