@@ -17,7 +17,7 @@ if(isset($_GET['action'])) {
             echo '
             <div class="alert alert-warning alert-dismissible">
             Berhasil Di Hapus</div>';
-            echo '<meta http-equiv="refresh" content="1;url=index.php?page=ekstra251150057">';
+            echo '<meta http-equiv="refresh" content="1;url=index.php?page=ekstra2511500057">';
         }
     }
 }
@@ -26,7 +26,7 @@ if(isset($_GET['action'])) {
     <div class="container-fluid">
         <div class="card">
             <div class="card-body">
-                <a href="index.php?page=tambah_ekstra251150057" class="btn btn-primary btn-sm">
+                <a href="index.php?page=tambah_ekstra2511500057" class="btn btn-primary btn-sm">
             Tambah Ekstrakurikuler</a>
             <table class="table table-striped">
                 <tread>
@@ -55,10 +55,10 @@ if(isset($_GET['action'])) {
                              <td><?=$result['semester057']; ?></td>
                              <td><?=$result['thn_ajaran057']; ?></td>
                              <td>
-                                <a href="index.php?page=ekstra251150057&action=hapus&kd=<?=  $result['id_ekstra057']
+                                <a href="index.php?page=ekstra2511500057&action=hapus&kd=<?=  $result['id_ekstra057']
                                 ?>" title="">
                                 <span class="badge badge-danger">Hapus</span></a>
-                                <a href="index.php?page=edit_ekstra251150057&kd=<?= $result['id_ekstra057'] ?>" title
+                                <a href="index.php?page=edit_ekstra2511500057&kd=<?= $result['id_ekstra057'] ?>" title
                                 =""><span class
                                 ="badge badge-warning">Edit</span><a>
                              </td>
